@@ -29,10 +29,19 @@
         </li>
        
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form method="get" action="/search" class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query"/>
+        <button class="btn btn-outline-light m-1 my-sm-0" type="submit">Search</button>
       </form>
+         <!-- a href="/admin" role="button" class="btn btn-outline-success m-2 my-sm-0">Admin Panel</a>
+          <!-- Button to trigger Login modal -->
+         <button type="button" class="btn btn-outline-light m-1 my-sm-0" data-bs-toggle="modal" data-bs-target="#LoginModal">
+         Login
+         </button>
+         <!-- Button to trigger SignUp modal -->
+         <button type="button" class="btn btn-outline-light m-1 my-sm-0" data-bs-toggle="modal" data-bs-target="#SignUpModal">
+         SignUp
+         </button>
     </div>
   </div>
 </nav>
@@ -42,6 +51,72 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {% endfor %}
+
+<!-- SignUp Modal -->
+<div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignUpModalTitle">SignUp</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Choose your username">
+        </div>
+        <div class="mb-3">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="pass1" class="form-label">Password</label>
+          <input type="text" class="form-control" id="pass1" name="pass1" placeholder="Choose your password">
+        </div>
+        <div class="mb-3">
+          <label for="pass2" class="form-label">Confirm Password</label>
+          <input type="text" class="form-control" id="pass2" name="pass2" placeholder="Enter your password again">
+        </div>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="LoginModalTitle">Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="loginusername" class="form-label">Username</label>
+          <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Enter your username">
+        </div>
+        <div class="mb-3">
+          <label for="pass" class="form-label">Password</label>
+          <input type="text" class="form-control" id="pass" name="pass" placeholder="Enter your password">
+        </div>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
 
 {% block body %}{% endblock body %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
