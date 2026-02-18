@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+#admin.site.site_header = "iCode Admin" # a way to change different things on Django Admin site
+#admin.site.site_title = "iCode Admin Panel"
+#admin.site.index_title = "Welcome to iCode Admin Panel"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig'
 ]
@@ -122,6 +123,10 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
